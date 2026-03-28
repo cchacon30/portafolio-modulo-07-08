@@ -1,0 +1,385 @@
+
+/* --- CONFIGURACIÓN BASE --- */
+:root {
+    /* DTokens de Color para facilitar cambios */
+    --color-primario: #007bff; /* Azul profesional */
+    --color-oscuro: #1a1a1a;   /* "Casi negro" para reducir fatiga visual */
+    --color-texto: #333333;
+    --color-fondo-suave: #f8f9fa;
+    --font-principal: 'Open Sans', sans-serif;
+    --font-titulos: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-principal);
+    color: var(--color-texto);
+    line-height: 1.6; 
+    background-color: #ffffff;
+}
+
+/* --- TIPOGRAFÍAS--- */
+
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: Montserrat !important;
+    font-weight: 700;
+}
+
+p {
+    font-family: Inter !important;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.btn {
+    font-family: Inter !important;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+
+
+/* --- CLASES DE UTILIDAD SOLICITADAS --- */
+.custom-rounded {
+    border-radius: 15px !important;
+}
+
+/* --- COMPONENTES PERSONALIZADOS  --- */
+
+/* Header con efecto Sticky  */
+.header-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+}
+
+/* Hero Section con mejor Contraste */
+.hero-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+/* Cards de Proyectos: Principio de Región Común */
+.card {
+    transition: transform 0.3s ease, shadow 0.3s ease;
+    border: none;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Micro-interacción atractiva */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.card-img-top {
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+}
+
+/* Botones: Usabilidad Táctil  */
+.btn {
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-primario);
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background-color: #0056b3;
+}
+
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Ajuste de tamaño para móviles */
+    }
+    .hero-section {
+        padding: 60px 0;
+    }
+}
+
+
+/* --- TARJETAS PORTFOLIO (Overlay Style) --- */
+
+.portfolio-card {
+    position: relative;
+    height: 400px; /* Altura fija para consistencia visual (Lección 1) */
+    overflow: hidden;
+    border-radius: 15px; /* Clase custom-rounded integrada */
+    border: none;
+    cursor: pointer;
+}
+
+/* La imagen de fondo que cubre todo */
+.portfolio-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* Capa oscura (Overlay) para legibilidad */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 10%, rgba(0, 0, 0, 0.2) 90%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    transition: background 0.3s ease;
+}
+
+/* Efectos al pasar el mouse */
+.portfolio-card:hover img {
+    transform: scale(1.1); /* Zoom suave */
+}
+
+.portfolio-card:hover .card-overlay {
+    background: rgba(0, 0, 0, 0.7); /* Se oscurece un poco más al hacer hover */
+}
+
+/* Textos calados en blanco */
+.portfolio-card h5 {
+    color: #ffffff !important;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.portfolio-card p {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+/* Botón Outline Blanco */
+.btn-outline-white {
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-white:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+
+
+/* --- ANIMACIÓN DE ENTRADA  */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de las secciones principales */
+section {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Retraso sutil para las tarjetas de proyectos para un efecto cascada */
+.portfolio-card {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.portfolio-card:nth-child(1) { animation-delay: 0.2s; }
+.portfolio-card:nth-child(2) { animation-delay: 0.4s; }
+.portfolio-card:nth-child(3) { animation-delay: 0.6s; }
+
+
+
+/* --- SECCIÓN HABILIDADES  --- */
+
+.skills-container {
+    perspective: 1000px; /* Crea un entorno 3D para las tarjetas */
+}
+
+.skill-card-innovative {
+    background: rgba(255, 255, 255, 0.05); /* Glassmorphism: fondo traslúcido */
+    backdrop-filter: blur(10px); /* Desenfoque de fondo */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 20px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de iluminación al pasar el mouse */
+.skill-card-innovative::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.skill-card-innovative:hover::before {
+    opacity: 1;
+}
+
+.skill-card-innovative:hover {
+    transform: translateY(-15px) rotateX(10deg); /* Movimiento 3D */
+    border-color: var(--color-primario);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilo para los Iconos */
+.skill-icon-wrap {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+.skill-card-innovative:hover .skill-icon-wrap {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.skill-card-innovative h5 {
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-transform: uppercase; /* Estética más minimalista */
+    font-size: 1.1rem;
+}
+
+.skill-card-innovative p {
+    color: #aaa;
+    font-weight: 300;
+}
+
+
+/* --- ESTILOS DEL VISOR DE PROYECTOS --- */
+
+/* Forzamos que la imagen use su ancho natural pero respete el contenedor */
+#modalImage {
+    width: 100%;
+    height: auto;
+    max-width: none; /* Permite que la imagen sea más larga que la pantalla */
+}
+
+/* Personalización del Scrollbar para estética disruptiva */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-primario);
+    border-radius: 10px;
+}
+
+/* Animación de apertura suave */
+.modal.fade .modal-dialog {
+    transform: scale(0.9);
+    transition: transform 0.3s ease-out;
+}
+.modal.show .modal-dialog {
+    transform: scale(1);
+}
+
+
+
+.bg-custom-hero {
+    /* Ruta de imagen */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/tu-imagen.jpg');
+    
+    /* Configuración para que la imagen cubra todo el div */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Altura del contenedor */
+    min-height: 500px;
+    width: 100%;
+}
+
+/* Sombra opcional para resaltar el texto */
+.shadow-text {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Borde redondeado de botones */
+.super-radius {
+    border-radius: 60px;
+}
+
+
+.purple {
+    color: #7b0c7d;
+}
+
+.bg1 {
+    background-color: #1c77c3;
+}
+
+.bg2 {
+    background-color: #39a9db;
+}
+
+.bg3 {
+    background-color: #40bcd8;
+}
+
+.bg4 {
+    background-color: #f39237;
+}
+
+.bg5 {
+    background-color: #d63230;
+}
+
+
+/* Color de boton */
+.btn-custom {
+  background-color: #f39237; 
+  color: #FFFFFF;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 40px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Hace que el cambio no sea brusco */
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-custom:hover {
+  background-color: #d63230; 
+  color: #FFFFFF;
+}
+
+
+
+
+
