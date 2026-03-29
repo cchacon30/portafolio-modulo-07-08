@@ -1,9 +1,10 @@
-
 /* --- CONFIGURACIÓN BASE --- */
 :root {
     /* DTokens de Color para facilitar cambios */
-    --color-primario: #007bff; /* Azul profesional */
-    --color-oscuro: #1a1a1a;   /* "Casi negro" para reducir fatiga visual */
+    --color-primario: #007bff;
+    /* Azul profesional */
+    --color-oscuro: #1a1a1a;
+    /* "Casi negro" para reducir fatiga visual */
     --color-texto: #333333;
     --color-fondo-suave: #f8f9fa;
     --font-principal: 'Open Sans', sans-serif;
@@ -13,14 +14,20 @@
 body {
     font-family: var(--font-principal);
     color: var(--color-texto);
-    line-height: 1.4; 
+    line-height: 1.4;
     background-color: #ffffff;
 }
 
 /* --- TIPOGRAFÍAS--- */
 
 
-h1, h2, h3, h4, h5, h6, .navbar-brand {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand {
     font-family: Montserrat !important;
     font-weight: 700;
 }
@@ -70,8 +77,9 @@ p {
 }
 
 .card:hover {
-    transform: translateY(-10px); /* Micro-interacción atractiva */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: translateY(-10px);
+    /* Micro-interacción atractiva */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .card-img-top {
@@ -79,7 +87,8 @@ p {
 }
 
 .card:hover .card-img-top {
-    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+    transform: scale(1.1);
+    /* Efecto de zoom al pasar el mouse */
 }
 
 /* Botones: Usabilidad Táctil  */
@@ -104,8 +113,10 @@ p {
 /* --- RESPONSIVIDAD --- */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2rem; /* Ajuste de tamaño para móviles */
+        font-size: 2rem;
+        /* Ajuste de tamaño para móviles */
     }
+
     .hero-section {
         padding: 60px 0;
     }
@@ -116,9 +127,11 @@ p {
 
 .portfolio-card {
     position: relative;
-    height: 400px; /* Altura fija para consistencia visual (Lección 1) */
+    height: 400px;
+    /* Altura fija para consistencia visual (Lección 1) */
     overflow: hidden;
-    border-radius: 15px; /* Clase custom-rounded integrada */
+    border-radius: 15px;
+    /* Clase custom-rounded integrada */
     border: none;
     cursor: pointer;
 }
@@ -148,11 +161,13 @@ p {
 
 /* Efectos al pasar el mouse */
 .portfolio-card:hover img {
-    transform: scale(1.1); /* Zoom suave */
+    transform: scale(1.1);
+    /* Zoom suave */
 }
 
 .portfolio-card:hover .card-overlay {
-    background: rgba(0, 0, 0, 0.7); /* Se oscurece un poco más al hacer hover */
+    background: rgba(0, 0, 0, 0.7);
+    /* Se oscurece un poco más al hacer hover */
 }
 
 /* Textos calados en blanco */
@@ -190,6 +205,7 @@ p {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -207,21 +223,32 @@ section {
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.portfolio-card:nth-child(1) { animation-delay: 0.2s; }
-.portfolio-card:nth-child(2) { animation-delay: 0.4s; }
-.portfolio-card:nth-child(3) { animation-delay: 0.6s; }
+.portfolio-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.portfolio-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.portfolio-card:nth-child(3) {
+    animation-delay: 0.6s;
+}
 
 
 
 /* --- SECCIÓN HABILIDADES  --- */
 
 .skills-container {
-    perspective: 1000px; /* Crea un entorno 3D para las tarjetas */
+    perspective: 1000px;
+    /* Crea un entorno 3D para las tarjetas */
 }
 
 .skill-card-innovative {
-    background: rgba(255, 255, 255, 0.05); /* Glassmorphism: fondo traslúcido */
-    backdrop-filter: blur(10px); /* Desenfoque de fondo */
+    background: rgba(255, 255, 255, 0.05);
+    /* Glassmorphism: fondo traslúcido */
+    backdrop-filter: blur(10px);
+    /* Desenfoque de fondo */
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 40px 20px;
@@ -238,7 +265,7 @@ section {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
     opacity: 0;
     transition: opacity 0.3s;
 }
@@ -248,7 +275,8 @@ section {
 }
 
 .skill-card-innovative:hover {
-    transform: translateY(-15px) rotateX(10deg); /* Movimiento 3D */
+    transform: translateY(-15px) rotateX(10deg);
+    /* Movimiento 3D */
     border-color: var(--color-primario);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
@@ -268,7 +296,8 @@ section {
 .skill-card-innovative h5 {
     color: #ffffff;
     letter-spacing: 1px;
-    text-transform: uppercase; /* Estética más minimalista */
+    text-transform: uppercase;
+    /* Estética más minimalista */
     font-size: 1.1rem;
 }
 
@@ -284,16 +313,19 @@ section {
 #modalImage {
     width: 100%;
     height: auto;
-    max-width: none; /* Permite que la imagen sea más larga que la pantalla */
+    max-width: none;
+    /* Permite que la imagen sea más larga que la pantalla */
 }
 
 /* Personalización del Scrollbar para estética disruptiva */
 .custom-scrollbar::-webkit-scrollbar {
     width: 10px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-track {
     background: #1a1a1a;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb {
     background: var(--color-primario);
     border-radius: 10px;
@@ -304,6 +336,7 @@ section {
     transform: scale(0.9);
     transition: transform 0.3s ease-out;
 }
+
 .modal.show .modal-dialog {
     transform: scale(1);
 }
@@ -313,12 +346,12 @@ section {
 .bg-custom-hero {
     /* Ruta de imagen */
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/tu-imagen.jpg');
-    
+
     /* Configuración para que la imagen cubra todo el div */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    
+
     /* Altura del contenedor */
     min-height: 500px;
     width: 100%;
@@ -332,6 +365,10 @@ section {
 /* Borde redondeado de botones */
 .super-radius {
     border-radius: 60px;
+}
+
+.medium-radius {
+    border-radius: 20px;
 }
 
 
@@ -362,21 +399,22 @@ section {
 
 /* Color de boton */
 .btn-custom {
-  background-color: #f39237; 
-  color: #FFFFFF;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 40px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease; /* Hace que el cambio no sea brusco */
-  text-decoration: none;
-  display: inline-block;
+    background-color: #f39237;
+    color: #FFFFFF;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 40px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Hace que el cambio no sea brusco */
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn-custom:hover {
-  background-color: #d63230; 
-  color: #FFFFFF;
+    background-color: #d63230;
+    color: #FFFFFF;
 }
 
 
@@ -389,11 +427,11 @@ section {
 
 .hcard:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
 }
 
 .htext-primary {
-    color: #1E5ADB !important; /* Usa el azul de tu identidad visual */
+    color: #1E5ADB !important;
 }
 
 .hcustom-rounded {
@@ -401,6 +439,8 @@ section {
 }
 
 
-
-
-
+.titular {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 200;
+}
