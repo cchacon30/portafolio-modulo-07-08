@@ -383,3 +383,24 @@ section {
 
 
 
+.hcard {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hcard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.htext-primary {
+    color: #1E5ADB !important; /* Usa el azul de tu identidad visual */
+}
+
+.hcustom-rounded {
+    border-radius: 15px;
+}
+
+
+
+
+
